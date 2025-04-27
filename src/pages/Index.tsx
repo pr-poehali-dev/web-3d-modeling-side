@@ -1,11 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Header from "@/components/Header";
+import ModelingToolbar from "@/components/ModelingToolbar";
+import PropertiesPanel from "@/components/PropertiesPanel";
+import SceneView from "@/components/SceneView";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="flex flex-col h-screen bg-editor-bg">
+      <Header />
+      
+      <div className="flex flex-1 overflow-hidden">
+        <div className="p-4">
+          <ModelingToolbar />
+        </div>
+        
+        <div className="flex-1 p-4 overflow-hidden">
+          <SceneView />
+        </div>
+        
+        <div className="p-4">
+          <PropertiesPanel />
+        </div>
       </div>
     </div>
   );
