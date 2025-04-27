@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Eye, Grid3X3, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
+import { Eye, Grid, ZoomIn, ZoomOut, Maximize } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -27,7 +27,7 @@ const SceneView = () => {
               className="bg-editor-tool/80 backdrop-blur-sm"
               onClick={() => setShowGrid(!showGrid)}
             >
-              <Grid3X3 size={18} className={showGrid ? "text-editor-accent" : ""} />
+              <Grid size={18} className={showGrid ? "text-editor-accent" : ""} />
             </Button>
           </TooltipTrigger>
           <TooltipContent side="top">
@@ -87,7 +87,7 @@ const SceneView = () => {
               size="icon" 
               className="bg-editor-tool/80 backdrop-blur-sm"
             >
-              <Maximize2 size={18} />
+              <Maximize size={18} />
             </Button>
           </TooltipTrigger>
           <TooltipContent side="top">

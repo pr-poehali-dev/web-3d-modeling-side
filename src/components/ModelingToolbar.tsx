@@ -1,13 +1,13 @@
 import { 
-  Cube, 
-  Cylinder, 
-  Sphere, 
-  Pointer, 
-  Move, 
-  Scale, 
-  Rotate, 
+  Box, 
+  Cylinder as CylinderIcon, 
+  CircleOff, 
+  MousePointer, 
+  MoveHorizontal, 
+  Maximize, 
+  RotateCcw, 
   Eraser, 
-  PaintBucket
+  Palette
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -19,21 +19,21 @@ type ToolbarItem = {
 };
 
 const tools: ToolbarItem[] = [
-  { icon: <Pointer size={20} />, name: "select", tooltip: "Выбрать объект" },
-  { icon: <Move size={20} />, name: "move", tooltip: "Переместить" },
-  { icon: <Scale size={20} />, name: "scale", tooltip: "Масштабировать" },
-  { icon: <Rotate size={20} />, name: "rotate", tooltip: "Вращать" }
+  { icon: <MousePointer size={20} />, name: "select", tooltip: "Выбрать объект" },
+  { icon: <MoveHorizontal size={20} />, name: "move", tooltip: "Переместить" },
+  { icon: <Maximize size={20} />, name: "scale", tooltip: "Масштабировать" },
+  { icon: <RotateCcw size={20} />, name: "rotate", tooltip: "Вращать" }
 ];
 
 const primitives: ToolbarItem[] = [
-  { icon: <Cube size={20} />, name: "cube", tooltip: "Куб" },
-  { icon: <Cylinder size={20} />, name: "cylinder", tooltip: "Цилиндр" },
-  { icon: <Sphere size={20} />, name: "sphere", tooltip: "Сфера" }
+  { icon: <Box size={20} />, name: "cube", tooltip: "Куб" },
+  { icon: <CylinderIcon size={20} />, name: "cylinder", tooltip: "Цилиндр" },
+  { icon: <CircleOff size={20} />, name: "sphere", tooltip: "Сфера" }
 ];
 
 const operations: ToolbarItem[] = [
   { icon: <Eraser size={20} />, name: "delete", tooltip: "Удалить" },
-  { icon: <PaintBucket size={20} />, name: "material", tooltip: "Материал" }
+  { icon: <Palette size={20} />, name: "material", tooltip: "Материал" }
 ];
 
 const ModelingToolbar = () => {
