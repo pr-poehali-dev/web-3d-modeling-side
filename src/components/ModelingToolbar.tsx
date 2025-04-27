@@ -7,7 +7,12 @@ import {
   Maximize, 
   RotateCcw, 
   Eraser, 
-  Palette
+  Palette,
+  Layers,
+  Triangle,
+  Hexagon,
+  Cone,
+  Merge
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -28,12 +33,17 @@ const tools: ToolbarItem[] = [
 const primitives: ToolbarItem[] = [
   { icon: <Box size={20} />, name: "cube", tooltip: "Куб" },
   { icon: <CylinderIcon size={20} />, name: "cylinder", tooltip: "Цилиндр" },
-  { icon: <CircleOff size={20} />, name: "sphere", tooltip: "Сфера" }
+  { icon: <CircleOff size={20} />, name: "sphere", tooltip: "Сфера" },
+  { icon: <Cone size={20} />, name: "cone", tooltip: "Конус" },
+  { icon: <Triangle size={20} />, name: "pyramid", tooltip: "Пирамида" },
+  { icon: <Hexagon size={20} />, name: "torus", tooltip: "Тор" }
 ];
 
 const operations: ToolbarItem[] = [
   { icon: <Eraser size={20} />, name: "delete", tooltip: "Удалить" },
-  { icon: <Palette size={20} />, name: "material", tooltip: "Материал" }
+  { icon: <Palette size={20} />, name: "material", tooltip: "Материал" },
+  { icon: <Merge size={20} />, name: "combine", tooltip: "Объединить" },
+  { icon: <Layers size={20} />, name: "convert2d", tooltip: "Конвертировать в 2D" }
 ];
 
 const ModelingToolbar = () => {
@@ -86,7 +96,7 @@ const ModelingToolbar = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="tool-button w-full flex justify-start h-9 gap-2"
+                className={`tool-button w-full flex justify-start h-9 gap-2 ${op.name === 'convert2d' ? 'text-editor-accent' : ''}`}
               >
                 {op.icon}
                 <span className="text-xs">{op.tooltip}</span>
